@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navidad 2026 · La magia de compartir</title>
+  <meta name="description" content="Proyecto académico: página navideña inspirada en Coca-Cola.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Nieve animada (se dibuja con script.js) -->
+  <canvas id="nieve" aria-hidden="true"></canvas>
+
+  <!-- ===== MENÚ ===== -->
+  <header id="menu" class="menu">
+    <div class="luces" aria-hidden="true"></div>
+    <nav class="menu__barra contenedor">
+      <a href="#inicio" class="logo">Coca-Cola</a>
+      <ul class="menu__enlaces" id="enlaces">
+        <li><a href="#inicio" class="activo">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#navidad">Navidad</a></li>
+        <li><a href="#comparte">Comparte</a></li>
+        <li><a href="#recetas">Recetas</a></li>
+        <li class="solo-movil"><a href="#productos" class="boton boton--blanco">Comprar</a></li>
+      </ul>
+      <div class="menu__acciones">
+        <button class="icono" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="icono" aria-label="Mi cuenta"><i class="fa-solid fa-user"></i></button>
+        <a href="#productos" class="boton boton--rojo boton--chico">Comprar</a>
+        <button class="hamburguesa" id="hamburguesa" aria-label="Abrir menú" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section id="inicio" class="hero">
+      <div class="hero__texto">
+        <p class="etiqueta etiqueta--dorada">Navidad 2026</p>
+        <h1>Destapa la magia de la Navidad</h1>
+        <p>Comparte momentos únicos con quienes más quieres esta temporada.</p>
+        <div class="hero__botones">
+          <a href="#navidad" class="boton boton--blanco">Descubre la campaña</a>
+          <a href="#productos" class="boton boton--borde">Ver productos</a>
+        </div>
+      </div>
+      <picture class="hero__foto">
+        <source media="(max-width: 767px)" srcset="img/oso-saludo.jpg">
+        <img src="img/camion-noche.jpg" alt="Camión navideño iluminado de noche">
+      </picture>
+      <div class="esferas" aria-hidden="true">
+        <span class="esfera esfera--dorada" style="--largo:90px; left:62%"></span>
+        <span class="esfera esfera--blanca" style="--largo:50px; left:74%"></span>
+        <span class="esfera esfera--verde"  style="--largo:120px; left:86%"></span>
+      </div>
+    </section>
+
+    <!-- ===== BENEFICIOS ===== -->
+    <section id="beneficios" class="beneficios contenedor">
+      <article class="beneficio aparecer">
+        <span class="circulo"><i class="fa-solid fa-truck"></i></span>
+        <div><h3>Delivery en Lima</h3><p>Pedidos con entrega en 24 h</p></div>
+      </article>
+      <article class="beneficio aparecer">
+        <span class="circulo"><i class="fa-solid fa-gift"></i></span>
+        <div><h3>Packs para regalar</h3><p>Ediciones navideñas limitadas</p></div>
+      </article>
+      <article class="beneficio aparecer">
+        <span class="circulo"><i class="fa-solid fa-star"></i></span>
+        <div><h3>Promos de temporada</h3><p>Descuentos hasta el 31 de diciembre</p></div>
+      </article>
+    </section>
+
+    <!-- ===== PRODUCTOS ===== -->
+    <section id="productos" class="seccion contenedor">
+      <div class="seccion__cabecera">
+        <p class="etiqueta">Edición limitada</p>
+        <h2>Brinda con la familia esta Navidad</h2>
+        <p class="bajada">Presentaciones con diseño navideño, disponibles por tiempo limitado</p>
+      </div>
+      <div class="grilla grilla--4">
+        <article class="tarjeta aparecer">
+          <img class="difuminada-abajo" src="img/original.jpg" alt="Lata de Coca-Cola Original">
+          <div class="tarjeta__cuerpo">
+            <h3>Original</h3>
+            <p>Lata 355 ml · botella 500 ml · 1.5 L</p>
+            <a href="#" class="boton boton--borde-rojo">Ver más</a>
+          </div>
+        </article>
+        <article class="tarjeta aparecer">
+          <img class="difuminada-abajo" src="img/sin-azucar.jpg" alt="Lata de Coca-Cola Sin Azúcar">
+          <div class="tarjeta__cuerpo">
+            <h3>Sin Azúcar</h3>
+            <p>Todo el sabor, cero azúcar</p>
+            <a href="#" class="boton boton--borde-rojo">Ver más</a>
+          </div>
+        </article>
+        <article class="tarjeta aparecer">
+          <img class="difuminada-abajo" src="img/papa-noel.jpg" alt="Adorno de Papá Noel con botella">
+          <div class="tarjeta__cuerpo">
+            <h3>Papá Noel</h3>
+            <p>Botella de vidrio de temporada</p>
+            <a href="#" class="boton boton--borde-rojo">Ver más</a>
+          </div>
+        </article>
+        <article class="tarjeta aparecer">
+          <img class="difuminada-abajo" src="img/regalos.jpg" alt="Cajas de regalo rojas">
+          <div class="tarjeta__cuerpo">
+            <h3>Pack Navideño</h3>
+            <p>6 latas en caja de regalo</p>
+            <a href="#" class="boton boton--borde-rojo">Ver más</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CAMPAÑA ===== -->
+    <section id="navidad" class="seccion contenedor campana">
+      <img class="campana__foto difuminada-derecha aparecer" src="img/caravana.jpg" alt="Camión de la caravana navideña en la nieve">
+      <div class="campana__info">
+        <p class="etiqueta">Campaña navideña</p>
+        <h2>La Caravana de Navidad llega a tu distrito</h2>
+        <p class="bajada">Luces, música y regalos sorpresa recorren Lima y Callao. ¡No te la pierdas!</p>
+
+        <div class="contador" id="contador" aria-label="Cuenta regresiva para Navidad">
+          <div><strong id="dias">00</strong><span>días</span></div>
+          <div><strong id="horas">00</strong><span>horas</span></div>
+          <div><strong id="minutos">00</strong><span>min</span></div>
+          <div><strong id="segundos">00</strong><span>seg</span></div>
+        </div>
+
+        <ul class="eventos">
+          <li><i class="fa-solid fa-location-dot"></i><b>Sáb 12 dic</b> Parque Kennedy, Miraflores</li>
+          <li><i class="fa-solid fa-location-dot"></i><b>Dom 13 dic</b> Plaza de Armas del Callao</li>
+          <li><i class="fa-solid fa-location-dot"></i><b>Sáb 19 dic</b> Parque zonal, San Juan de Lurigancho</li>
+        </ul>
+        <a class="boton boton--rojo" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/Parque+Kennedy+Miraflores+Lima">Ver mapa del recorrido</a>
+      </div>
+    </section>
+
+    <!-- ===== COMPARTE ===== -->
+    <section id="comparte" class="comparte">
+      <div class="comparte__foto">
+        <img class="difuminada-derecha" src="img/comparte.jpg" alt="Mano sosteniendo una lata frente a luces navideñas">
+        <div class="vista-previa" id="vistaPrevia">
+          <strong id="vpNombre">Para: Familia</strong>
+          <span id="vpMensaje">¡Feliz Navidad a todos!</span>
+        </div>
+      </div>
+      <form class="comparte__form" id="formLata">
+        <p class="etiqueta">Personaliza</p>
+        <h2>Comparte una Coca-Cola con quien más quieres</h2>
+
+        <label for="nombre">Nombre para tu lata</label>
+        <input id="nombre" type="text" maxlength="12" value="Familia" required>
+
+        <label for="mensaje">Mensaje navideño</label>
+        <textarea id="mensaje" maxlength="120" rows="3">¡Feliz Navidad a todos!</textarea>
+
+        <p class="label">Elige el diseño</p>
+        <div class="colores" role="radiogroup">
+          <label><input type="radio" name="color" value="rojo" checked><span class="color color--rojo"></span>Rojo</label>
+          <label><input type="radio" name="color" value="negro"><span class="color color--negro"></span>Negro</label>
+          <label><input type="radio" name="color" value="plata"><span class="color color--plata"></span>Plata</label>
+        </div>
+
+        <div class="comparte__acciones">
+          <button type="submit" class="boton boton--rojo">Crear mi lata</button>
+          <a id="compartirWa" class="social" target="_blank" rel="noopener" aria-label="Compartir por WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="social" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a class="social" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a class="social" href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+        <p class="aviso" id="avisoLata" role="status"></p>
+      </form>
+    </section>
+
+    <!-- ===== RECETAS ===== -->
+    <section id="recetas" class="seccion contenedor">
+      <div class="seccion__cabecera seccion__cabecera--izq">
+        <div>
+          <p class="etiqueta">Recetas</p>
+          <h2>Momentos que saben a Navidad</h2>
+        </div>
+        <a href="#recetas" class="enlace">Ver todas →</a>
+      </div>
+      <div class="grilla grilla--3">
+        <article class="tarjeta aparecer">
+          <div class="tarjeta__imagen">
+            <img class="difuminada-abajo" src="img/chocolatada.jpg" alt="Taza de chocolate caliente">
+            <span class="chip"><i class="fa-regular fa-clock"></i> 40 min</span>
+          </div>
+          <div class="tarjeta__cuerpo">
+            <h3>Chocolatada navideña</h3>
+            <p>La tradición peruana para compartir con la familia y los vecinos.</p>
+            <details>
+              <summary>Ver receta →</summary>
+              <ol>
+                <li>Derrite chocolate para taza en leche evaporada con un poco de agua.</li>
+                <li>Agrega canela, clavo y azúcar al gusto; hierve a fuego bajo 20 min.</li>
+                <li>Sirve caliente con un buen trozo de panetón.</li>
+              </ol>
+            </details>
+          </div>
+        </article>
+        <article class="tarjeta aparecer">
+          <div class="tarjeta__imagen">
+            <img class="difuminada-abajo" src="img/paneton.jpg" alt="Panetones en la mesa">
+            <span class="chip"><i class="fa-regular fa-clock"></i> 15 min</span>
+          </div>
+          <div class="tarjeta__cuerpo">
+            <h3>Panetón y brindis</h3>
+            <p>Ideas para una mesa de Nochebuena sencilla y deliciosa.</p>
+            <details>
+              <summary>Ver receta →</summary>
+              <ol>
+                <li>Corta el panetón en tajadas gruesas y tuéstalas ligeramente.</li>
+                <li>Acompaña con mantequilla o queso fresco.</li>
+                <li>Brinda con bebidas bien heladas a la medianoche.</li>
+              </ol>
+            </details>
+          </div>
+        </article>
+        <article class="tarjeta aparecer">
+          <div class="tarjeta__imagen">
+            <img class="difuminada-abajo" src="img/pavo.jpg" alt="Pavo asado con naranjas">
+            <span class="chip"><i class="fa-regular fa-clock"></i> 2 h 30 min</span>
+          </div>
+          <div class="tarjeta__cuerpo">
+            <h3>Pavo glaseado con Coca-Cola</h3>
+            <p>Un glaseado dulce y brillante para la cena del 24.</p>
+            <details>
+              <summary>Ver receta →</summary>
+              <ol>
+                <li>Hierve 1 taza de Coca-Cola con azúcar rubia y jugo de naranja hasta que espese.</li>
+                <li>Hornea el pavo sazonado y báñalo con el glaseado cada 30 min.</li>
+                <li>Sirve con rodajas de naranja y romero.</li>
+              </ol>
+            </details>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section id="newsletter" class="newsletter">
+      <div class="newsletter__texto">
+        <h2>Recibe sorpresas navideñas</h2>
+        <p>Promociones, recetas y eventos directo en tu correo.</p>
+        <form class="newsletter__form" id="formNews" novalidate>
+          <input type="email" id="correo" placeholder="Tu correo electrónico" aria-label="Correo electrónico">
+          <button type="submit" class="boton boton--negro">Suscribirme</button>
+        </form>
+        <label class="check"><input type="checkbox" id="acepto"> Acepto la política de privacidad</label>
+        <p class="aviso aviso--claro" id="avisoNews" role="status"></p>
+      </div>
+      <img class="newsletter__osos difuminada-izquierda" src="img/osos-familia.jpg" alt="Mamá osa polar con su cría en la nieve">
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="contenedor footer__grilla">
+      <div>
+        <a href="#inicio" class="logo">Coca-Cola</a>
+        <p>Destapa la felicidad y compártela esta Navidad.</p>
+        <div class="redes">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Productos</h4>
+        <ul><li><a href="#productos">Original</a></li><li><a href="#productos">Sin Azúcar</a></li><li><a href="#productos">Edición Papá Noel</a></li><li><a href="#productos">Packs navideños</a></li></ul>
+      </div>
+      <div>
+        <h4>La marca</h4>
+        <ul><li><a href="#">Nuestra historia</a></li><li><a href="#">Sostenibilidad</a></li><li><a href="#navidad">Campañas</a></li></ul>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <ul><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Contacto</a></li><li><a href="#">Libro de reclamaciones</a></li></ul>
+      </div>
+    </div>
+    <div class="contenedor footer__legal">
+      <p>© 2026 · Proyecto académico sin fines comerciales, no afiliado a The Coca-Cola Company. Fotos: Unsplash.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
